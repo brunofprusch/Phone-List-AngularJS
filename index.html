@@ -1,0 +1,28 @@
+<html ng-app="phoneList">
+  <head>
+      <title>Phone List</title>
+      <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
+      <style>
+        .jumbotron {
+            width: 400px;
+            text-align: center;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+      </style>
+      <script src="lib/angular/angular.js"></script>
+      <script>
+
+          angular.module("phoneList", []); //Cria o módulo
+          angular.module("phoneList").controller("phoneListCtrl", function ($scope){
+              $scope.app = "Phone List"
+          })
+      </script>
+  </head>
+  <body ng-controller="phoneListCtrl">
+      <div class="jumbotron">
+          <h4>{{app}}</h4>
+      </div>
+  </body>
+</html>
