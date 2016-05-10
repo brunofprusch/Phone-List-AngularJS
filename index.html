@@ -3,6 +3,7 @@
       <title>Phone List</title>
       <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
       <style>
+
         .jumbotron {
             width: 400px;
             text-align: center;
@@ -10,19 +11,57 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        .table {
+          margin-top: 20px;
+        }
+
+        .form-control {
+          margin-top: 5px;
+        }
+
       </style>
       <script src="lib/angular/angular.js"></script>
       <script>
 
           angular.module("phoneList", []); //Cria o módulo
           angular.module("phoneList").controller("phoneListCtrl", function ($scope){
-              $scope.app = "Phone List"
+              $scope.app = "Phone List";
+              $scope.contacts = [
+                  {name: "Bruno",  phone: "94147667"},
+                  {name: "Bruna",  phone: "81049781"},
+                  {name: "Daniel", phone: "84470884"},
+              ];
+
+              $scope.addContant = function(contact) {
+                $scope.contacts.push(contact);
+                delete $scope.contact;
+              }
           })
+
       </script>
   </head>
   <body ng-controller="phoneListCtrl">
       <div class="jumbotron">
-          <h4>{{app}}</h4>
+          <h3>{{app}}</h3>
+          <table class="table table-striped">
+              <tr>
+                  <th>Name</th>
+                  <th>Phone</th>
+              </tr>
+              <tr ng-repeat="contact in contacts">
+                  <td>{{contact.name}}</td>
+                  <td>{{contact.phone}}</td>
+              </tr>
+
+          </table>
+
+          <input class="form-control" type="text" ng-model="contact.name" placeholder="Name"/>
+          <input class="form-control" type="text" ng-model="contact.phone" placeholder="Phone"/>
+
+          <button class="btn btn-primary btn-block" ng-click="addContant(contact)">Add Contact</button>
+          {{contact}}
+
       </div>
   </body>
 </html>

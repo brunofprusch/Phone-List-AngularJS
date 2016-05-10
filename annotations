@@ -20,3 +20,16 @@ ng-bind
 ng-repeat
 
     Iterando sobre os itens de uma coleção ou de um objeto.
+
+ng-model
+
+    Faz o contrário do ng-bind, ou seja, pega uma coisa da view e DEFINE no $scope.
+
+ng-click
+
+    Basicamente é um evento, igual ao onClick, onBlur etc...
+
+
+OBS IMPORTANTE:
+
+    Evitar de ler o $scope dentro do controller.
