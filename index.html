@@ -2,6 +2,7 @@
   <head>
       <title>Phone List</title>
       <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
+
       <style>
 
         .jumbotron {
@@ -21,6 +22,7 @@
         }
 
       </style>
+
       <script src="lib/angular/angular.js"></script>
       <script>
 
@@ -33,6 +35,15 @@
                   {name: "Daniel", phone: "84470884"},
               ];
 
+              $scope.carriers = [
+                  {name: "Oi",    code: "14", category: "Cell"},
+                  {name: "Vivo",  code: "15", category: "Cell"},
+                  {name: "Tim",   code: "41", category: "Cell"},
+                  {name: "Claro", code: "36", category: "Cell"},
+                  {name: "NET",   code: "00", category: "Fixed"},
+                  {name: "GVT",   code: "21", category: "Fixed"},
+              ];
+
               $scope.addContant = function(contact) {
                 $scope.contacts.push(contact);
                 delete $scope.contact;
@@ -40,6 +51,7 @@
           })
 
       </script>
+
   </head>
   <body ng-controller="phoneListCtrl">
       <div class="jumbotron">
@@ -48,20 +60,22 @@
               <tr>
                   <th>Name</th>
                   <th>Phone</th>
+                  <th>Carrier</th>
               </tr>
               <tr ng-repeat="contact in contacts">
                   <td>{{contact.name}}</td>
                   <td>{{contact.phone}}</td>
+                  <td>{{contact.carrier.name}}</td>
               </tr>
-
           </table>
 
           <input class="form-control" type="text" ng-model="contact.name" placeholder="Name"/>
           <input class="form-control" type="text" ng-model="contact.phone" placeholder="Phone"/>
+          <select class="form-control" ng-model="contact.carrier" ng-options="carrier.name group by carrier.category for carrier in carriers">
+              <option value="">Select a carrier</option>
+          </select>
 
-          <button class="btn btn-primary btn-block" ng-click="addContant(contact)">Add Contact</button>
-          {{contact}}
-
+          <button class="btn btn-primary btn-block" ng-click="addContant(contact)" ng-disabled="!contact.name || !contact.phone">Add Contact</button>
       </div>
   </body>
 </html>

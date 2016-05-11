@@ -1,35 +1,52 @@
-ng-app
+# ng-app
 
     Normalmente utilzado na tag <html>
 
 
-ng-controller
+#ng-controller
 
     O local aonde você colocar o atreibuto ng-controller automaticamente se torna a view, pois a view não é um arquivo, nada mais é que um conjunto de tags.
     Você pode ter no mesmo arquivo, vários 'ng-controller'.
     O mesmo pode ser utilizado em qualquer tag, como por exemplo no <body> ou em uma <div>
 
 
-ng-bind
+# ng-bind
 
     Substitui elementos por expressões.
     Ou seja, se você tive '$scope.app = "Phone List"', e fizer <h4 ng-bind="app"></h4>, "Phone List" será impresso na tela.
     Porém, você pode utilizar a interpolação, por exemplo: <h4>{{app}}</h4>, que terá o mesmo efeito.
 
 
-ng-repeat
+# ng-repeat
 
     Iterando sobre os itens de uma coleção ou de um objeto.
 
-ng-model
+# ng-model
 
     Faz o contrário do ng-bind, ou seja, pega uma coisa da view e DEFINE no $scope.
 
-ng-click
+# ng-click
 
     Basicamente é um evento, igual ao onClick, onBlur etc...
 
 
-OBS IMPORTANTE:
+# OBS IMPORTANTE:
 
     Evitar de ler o $scope dentro do controller.
+
+
+ng-disabled
+
+    Disabilitar um elemento dinamicamente.
+
+
+ng-options
+
+    Renderiza as opções de um select.
+    Sempre deve ser utilizada juntamente com ng-model.
+
+
+ng-class
+
+
+ng-style
