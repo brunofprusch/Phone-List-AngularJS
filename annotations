@@ -46,7 +46,31 @@ ng-options
     Sempre deve ser utilizada juntamente com ng-model.
 
 
-ng-class
+ng-class - ng-style
+
+    Aplicando CSS e estilos dinamicamente.
 
 
-ng-style
+ng-hide - ng-show - ng-if
+
+    Apresenta elementos de forma condicional.
+
+    A diferença entre eles é que o ng-hide e ng-show trabalham somente com a
+    visibilidade, ou seja, trabalham a nivel de css para apresentar ou esconder
+    o elemento.
+
+    O ng-if trabalha a nível de dom, ou seja, ele remove o elemento do dom e cria
+    o elemento no dom novamente. Visualmente o comportamento é igual, porém tudo
+    dependo do caso que você vai utilizar.
+
+    O ng-if é muito útil quando não queremos carregar muito a página sem a nacessidade.
+
+
+ng-include
+
+    Incluir conteúdo dinamicamente.
+
+
+ng-required
+
+    Determina obrigatoriedade e um determinado campo de um fomulário.
