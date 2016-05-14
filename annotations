@@ -35,23 +35,23 @@
     Evitar de ler o $scope dentro do controller.
 
 
-ng-disabled
+# ng-disabled
 
     Disabilitar um elemento dinamicamente.
 
 
-ng-options
+# ng-options
 
     Renderiza as opções de um select.
     Sempre deve ser utilizada juntamente com ng-model.
 
 
-ng-class - ng-style
+# ng-class - ng-style
 
     Aplicando CSS e estilos dinamicamente.
 
 
-ng-hide - ng-show - ng-if
+# ng-hide - ng-show - ng-if
 
     Apresenta elementos de forma condicional.
 
@@ -66,11 +66,72 @@ ng-hide - ng-show - ng-if
     O ng-if é muito útil quando não queremos carregar muito a página sem a nacessidade.
 
 
-ng-include
+# ng-include
 
     Incluir conteúdo dinamicamente.
 
 
-ng-required
 
-    Determina obrigatoriedade e um determinado campo de um fomulário.
+#### Form validation
+
+        # ng-required
+
+            Determina obrigatoriedade e um determinado campo de um fomulário.
+
+            Necessário usar <form> e declarar um name, ou seja, <form name="contactForm">
+
+            O que ocorrerá é que o angular vai construir um objeto chamado contactForm
+            contendo todas as regras do formulário, como por exemplo os campos que estão
+            como required.
+
+
+            $valid - $invalid
+
+              Verifica se o objeto declarado no <form> criado pelo angular está válido
+              ou inválido de acordo com suas regras de required.
+
+            $pristine - $dirty
+
+              Verifica se um formulário ou campo já foi utilizado alguma vez.
+
+
+        # ng-minlength - ng-maxlength
+
+            Valida quanto a tamanho mínimo e maximo de uma campo.
+
+            Lembrando que não é uma mascara, ou seja, não vai impedir de incluir menos
+            que o minimo ou mais que o máximo, porém será utilizado para validar se
+            é valido ou não.
+
+
+        # ng-pattern
+
+            Define uma RegExp para validar um campo.
+
+
+                  ##### Form Properties
+
+                  Para estas propriedades é necessário utilizar a tag <form> dando um name para
+                  a mesma, ou seja <form name="nameForm">
+
+                            # $valid - $invalid
+
+                              Consultar a validade de um campo ou do form inteiro.
+
+
+                            # $pristine - $dirty
+
+                              Verifica se um formulário ou campo já foi utilizado alguma vez.
+
+
+                            # $error
+
+                              É um objeto que contem as validações e seus respectivos status.
+
+                              No caso de termos mais de um tipo de validação em um campo, como por exemplo
+                              required e minlength, o $valid ou $invalid não serve, pois precisamos mostrar
+                              alertas diferentes por exemplo.
+
+                              Neste caso utilizamos o $error, na qual podemos verificar cada uma das
+                              validações de forma independente, possibilitando a apresentação de mensagem
+                              diferentes.
