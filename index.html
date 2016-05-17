@@ -7,7 +7,7 @@
       <style>
 
         .jumbotron {
-            width: 400px;
+            width: 600px;
             text-align: center;
             margin-top: 20px;
             margin-left: auto;
@@ -39,9 +39,9 @@
           angular.module("phoneList").controller("phoneListCtrl", function ($scope){
               $scope.app = "Phone List";
               $scope.contacts = [
-                  {name: "Bruno",  phone: "94147667", color: "orange"},
-                  {name: "Bruna",  phone: "81049781", color: "green"},
-                  {name: "Daniel", phone: "84470884", color: "red"},
+                  {name: "Bruno",  date: new Date(), phone: "94147667", color: "orange"},
+                  {name: "Bruna",  date: new Date(), phone: "81049781", color: "green"},
+                  {name: "Daniel", date: new Date(), phone: "84470884", color: "red"},
               ];
 
               $scope.carriers = [
@@ -57,7 +57,6 @@
                 $scope.contacts.push(contact);
 
                 $scope.contactForm.$setPristine();
-
                 //$scope.contactForm.name.$setPristine();
                 //$scope.contactForm.phone.$setPristine();
                 delete $scope.contact;
@@ -84,17 +83,22 @@
   <body ng-controller="phoneListCtrl">
       <div class="jumbotron">
           <h3>{{app}}</h3>
-          <table ng-show="contacts.length > 0" class="table">
+
+          <input class="form-control" type="text" ng-model="searchCriterion" placeholder="O que você está buscando"/>
+
+          <table ng-show="contacts.length > 0" class="table table-striped">
               <tr>
                   <th>Select</th>
                   <th>Name</th>
+                  <th>Date</th>
                   <th>Phone</th>
                   <th>Carrier</th>
                   <th></th>
               </tr>
-              <tr ng-class="{selected: contact.selected, bold: contact.selected}" ng-repeat="contact in contacts">
+              <tr ng-class="{selected: contact.selected, bold: contact.selected}" ng-repeat="contact in contacts | filter:searchCriterion">
                   <td><input type="checkbox" ng-model="contact.selected"></td>
                   <td>{{contact.name}}</td>
+                  <td>{{contact.date | date: 'dd/MM/yyyy HH:mm'}}</td>
                   <td>{{contact.phone}}</td>
                   <td>{{contact.carrier.name}}</td>
                   <td><div style="width: 20px; height: 20px; background-color: yellow;" ng-style="{'background-color': contact.color}"></div></td>

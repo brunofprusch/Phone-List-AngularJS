@@ -135,3 +135,23 @@
                               Neste caso utilizamos o $error, na qual podemos verificar cada uma das
                               validações de forma independente, possibilitando a apresentação de mensagem
                               diferentes.
+
+
+
+
+##### Filtros
+
+  Transformam o resultado de uma expressão, realizando operações como a
+  formatação de data, a conversão de moeda e a ordenação de Array.
+
+  # uppercase - lowercase
+
+      Alterar uma string para maiúscula ou minúscula.
+
+  # date
+
+      Formata uma data usando usando uma máscara.
+
+  # filter
+
+      Filtra um array com base em um critério.
