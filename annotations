@@ -155,3 +155,7 @@
   # filter
 
       Filtra um array com base em um critério.
+
+  # orderBy
+
+      Ordena um array com base em um critério.

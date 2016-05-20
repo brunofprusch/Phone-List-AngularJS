@@ -74,7 +74,13 @@
                         return contact;
                       }
                   });
-              }
+              };
+
+              $scope.orderByColumn = "name";
+              $scope.orderBy = function(column) {
+                $scope.orderByColumn = column;
+                $scope.directionOfSorting = !$scope.directionOfSorting;
+              };
           })
 
       </script>
@@ -89,13 +95,13 @@
           <table ng-show="contacts.length > 0" class="table table-striped">
               <tr>
                   <th>Select</th>
-                  <th>Name</th>
-                  <th>Date</th>
-                  <th>Phone</th>
+                  <th><a href="" ng-click="orderBy('name')">Name</th>
+                  <th><a href="" ng-click="orderBy('date')">Date</th>
+                  <th><a href="" ng-click="orderBy('phone')">Phone</th>
                   <th>Carrier</th>
                   <th></th>
               </tr>
-              <tr ng-class="{selected: contact.selected, bold: contact.selected}" ng-repeat="contact in contacts | filter:searchCriterion">
+              <tr ng-class="{selected: contact.selected, bold: contact.selected}" ng-repeat="contact in contacts | filter:searchCriterion | orderBy: orderByColumn:directionOfSorting">
                   <td><input type="checkbox" ng-model="contact.selected"></td>
                   <td>{{contact.name}}</td>
                   <td>{{contact.date | date: 'dd/MM/yyyy HH:mm'}}</td>
@@ -115,7 +121,7 @@
               <div ng-show="contactForm.phone.$error.required && contactForm.phone.$dirty" class="alert alert-danger">The phone is required!</div>
               <div ng-show="contactForm.phone.$error.pattern" class="alert alert-danger">The phone need have pattern #####-####!</div>
 
-              <select class="form-control" ng-model="contact.carrier" ng-options="carrier.name group by carrier.category for carrier in carriers">
+              <select class="form-control" ng-model="contact.carrier" ng-options="carrier.name group by carrier.category for carrier in carriers  | orderBy: 'name'">
                   <option value="">Select a carrier</option>
               </select>
 
