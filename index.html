@@ -33,6 +33,7 @@
       </style>
 
       <script src="lib/angular/angular.js"></script>
+      <script src="lib/angular/i18n/angular-locale_pt-br.js"></script>
       <script>
 
           angular.module("phoneList", []); //Cria o módulo
@@ -45,12 +46,12 @@
               ];
 
               $scope.carriers = [
-                  {name: "Oi",    code: "14", category: "Cell"},
-                  {name: "Vivo",  code: "15", category: "Cell"},
-                  {name: "Tim",   code: "41", category: "Cell"},
-                  {name: "Claro", code: "36", category: "Cell"},
-                  {name: "NET",   code: "00", category: "Fixed"},
-                  {name: "GVT",   code: "21", category: "Fixed"},
+                  {name: "Oi",    code: "14", category: "Cell", price: 2},
+                  {name: "Vivo",  code: "15", category: "Cell", price: 1},
+                  {name: "Tim",   code: "41", category: "Cell", price: 3},
+                  {name: "Claro", code: "36", category: "Cell", price: 2},
+                  {name: "NET",   code: "00", category: "Fixed", price: 1},
+                  {name: "GVT",   code: "21", category: "Fixed", price: 1},
               ];
 
               $scope.addContant = function(contact) {
@@ -104,7 +105,7 @@
               <tr ng-class="{selected: contact.selected, bold: contact.selected}" ng-repeat="contact in contacts | filter:searchCriterion | orderBy: orderByColumn:directionOfSorting">
                   <td><input type="checkbox" ng-model="contact.selected"></td>
                   <td>{{contact.name}}</td>
-                  <td>{{contact.date | date: 'dd/MM/yyyy HH:mm'}}</td>
+                  <td>{{contact.date | date: 'MMMM : EEEE : dd/MM/yyyy HH:mm'}}</td>
                   <td>{{contact.phone}}</td>
                   <td>{{contact.carrier.name}}</td>
                   <td><div style="width: 20px; height: 20px; background-color: yellow;" ng-style="{'background-color': contact.color}"></div></td>
@@ -121,7 +122,7 @@
               <div ng-show="contactForm.phone.$error.required && contactForm.phone.$dirty" class="alert alert-danger">The phone is required!</div>
               <div ng-show="contactForm.phone.$error.pattern" class="alert alert-danger">The phone need have pattern #####-####!</div>
 
-              <select class="form-control" ng-model="contact.carrier" ng-options="carrier.name group by carrier.category for carrier in carriers  | orderBy: 'name'">
+              <select class="form-control" ng-model="contact.carrier" ng-options="carrier.name + ' (' + (carrier.price | currency) + ')' group by carrier.category for carrier in carriers  | orderBy: 'name'">
                   <option value="">Select a carrier</option>
               </select>
 

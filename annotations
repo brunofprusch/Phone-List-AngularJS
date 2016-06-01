@@ -144,6 +144,13 @@
   Transformam o resultado de uma expressão, realizando operações como a
   formatação de data, a conversão de moeda e a ordenação de Array.
 
+  OBS IMPORTANTE: Filtros se utilizados diretamente na view podem ser um
+                  gargalo de perfomance, sendo assim, é possível utilizarmos
+                  os filtros no controller.
+                  Para utilizarmos os filtros no controller é necessário
+                  passarmos na declaração do controller não só o $scope,
+                  mas também o $filter.
+
   # uppercase - lowercase
 
       Alterar uma string para maiúscula ou minúscula.
@@ -159,3 +166,15 @@
   # orderBy
 
       Ordena um array com base em um critério.
+
+  # currency
+
+      Converte um número para moeda.
+
+  # number
+
+      Formata um número
+
+  # limitTo
+
+      Limira um array ou uma String
