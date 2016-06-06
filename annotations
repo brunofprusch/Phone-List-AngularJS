@@ -178,3 +178,23 @@
   # limitTo
 
       Limira um array ou uma String
+
+
+
+###### Integrando com back-end por AJAX
+
+  O $http deve ser injetado na declaração do controller juntamente com o $scope.
+  Example: ($scope, $http).
+
+  # $http
+
+      Permite a realização de requisições utilizando XMLHttpRequest ou via JSONP.
+
+      O $http disponibiliza uma séria de funções para utilizarmos:
+
+          - get(url, config);
+          - post(url, data, config);
+          - put(url, data, config);
+          - delete(url, config);
+          - head(url, config);
+          - jsonp(url, config);

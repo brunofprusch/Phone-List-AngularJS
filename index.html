@@ -37,13 +37,17 @@
       <script>
 
           angular.module("phoneList", []); //Cria o módulo
-          angular.module("phoneList").controller("phoneListCtrl", function ($scope){
+          angular.module("phoneList").controller("phoneListCtrl", function ($scope, $http){
               $scope.app = "Phone List";
+              /*
               $scope.contacts = [
                   {name: "Bruno",  date: new Date(), phone: "94147667", color: "orange"},
                   {name: "Bruna",  date: new Date(), phone: "81049781", color: "green"},
                   {name: "Daniel", date: new Date(), phone: "84470884", color: "red"},
               ];
+              */
+
+              $scope.contacts = [];
 
               $scope.carriers = [
                   {name: "Oi",    code: "14", category: "Cell", price: 2},
@@ -82,6 +86,13 @@
                 $scope.orderByColumn = column;
                 $scope.directionOfSorting = !$scope.directionOfSorting;
               };
+
+              var loadContacts = function () {
+                $http.get("http://localhost:8080/contact/all");
+              };
+
+              loadContacts();
+
           })
 
       </script>
