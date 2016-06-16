@@ -198,3 +198,92 @@
           - delete(url, config);
           - head(url, config);
           - jsonp(url, config);
+
+
+
+####### Formar de organizar o projeto
+
+  Foi apresentado quatro formas de se organizar o projeto, mas nada impede que
+  estas formar tenham variações.
+
+  São elas:
+
+      # Inline Style
+          - Tudo dentro do index.html.
+
+                Cenários possíveis para utilizar:
+                    - Projetos muito simples
+                    - Protótipos
+                    - Provas de conceitos
+                    - Hello World
+
+
+      # Stereotyped Style (Pouco utilizado)
+          - Os componentes do mesmo tipo juntos.
+
+                Cenários possíveis para utilizar:
+                    - Projetos pequenos
+                    - Poucos componentes
+                    - Pouco código em cada componente
+                    - Domínio único
+
+                Exemplo:
+                    > app/
+                      > css/
+                          app,css
+                      > js/
+                          app.js
+                          controller.js
+                          directives.js
+                          filters.js
+                      > lib/
+                          angular.js
+                      > view/
+                          login.html
+                          list.html
+                      > index.html
+
+
+      # Specific Style (Utilizado no estudo)
+          - Um arquivo para cada componente
+
+                Cenários possíveis para utilizar:
+                    - Projetos médios
+                    - Muitos components
+                    - Número de linhas em cada arquivo já começa a incomodar
+                    - Domínio relativamente extenso
+
+                Exemplo:
+                    > app/
+                      > css/
+                          app,css
+                      > js/
+                          > controller/
+                              loginCtrl.js
+                              listCtrl,js
+                          > directives/
+                              panelDirective.js
+                              tableDirectives.js
+                          > services/
+                              loginService.js
+                              listService.js
+                          > app.js
+
+
+      # Domain Style
+          - Agrupando os arquivos por dominio
+
+                Cenários possíveis para utilizar:
+                    - Projetos grandes
+                    - Utilização de módulos
+                    - Domínio extenso
+
+                Exemplo:
+                > app/
+                  > app/
+                      app,css
+                      app.js
+                  > login
+                      login.css
+                      login.html
+                      loginCtrl.js
