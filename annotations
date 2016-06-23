@@ -287,3 +287,28 @@
                       login.css
                       login.html
                       loginCtrl.js
+
+
+
+
+
+####### Criando Serviços
+
+        Um Serviço é um singleton, ou seja, um objeto único, criado na
+        inicialização da aplicação e que está disponível para ser injetado
+        em outros componentes.
+
+
+        ### Tipos de Serviços
+
+              # Factory Function
+
+                    Métodos fabrica, ou seja, faz a invocação e tem um objeto
+                    de retorno.
+
+              # Constructor Function (Service)
+
+                   É como se fosse um contrutor de uma classe, ou seja,
+                   damos new e passamos os parâmetros, isto é "Constructor Function".
+
+              # Provider

@@ -1,4 +1,4 @@
-angular.module("phoneList").controller("phoneListCtrl", function ($scope, $http){
+angular.module("phoneList").controller("phoneListCtrl", function ($scope, contactAPI, carrierAPI){
     $scope.app = "Phone List";
     /*
     $scope.contacts = [
@@ -41,19 +41,19 @@ angular.module("phoneList").controller("phoneListCtrl", function ($scope, $http)
     };
 
     var loadContacts = function () {
-      $http.get("http://localhost:8080/contact/all").success(function (data){
+      contactAPI.getAllContacts().success(function (data) {
           $scope.contacts = data;
       });
     };
 
     var loadCarriers = function () {
-      $http.get("http://localhost:8080/carrier/all").success(function (data){
+      carrierAPI.getAllCarriers().success(function (data) {
           $scope.carriers = data;
       });
     };
 
     $scope.addContant = function(contact) {
-      $http.post("http://localhost:8080/contact/add", contact).success(function (data){
+      contactAPI.addContant().success(function (data) {
         $scope.contactForm.$setPristine();
         //$scope.contactForm.name.$setPristine();
         //$scope.contactForm.phone.$setPristine();
