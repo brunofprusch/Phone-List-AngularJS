@@ -1,4 +1,4 @@
-angular.module("phoneList").controller("phoneListCtrl", function ($scope, contactAPI, carrierAPI){
+angular.module("phoneList").controller("phoneListCtrl", function ($scope, contactAPI, carrierAPI, serialGenerator){
     $scope.app = "Phone List";
     /*
     $scope.contacts = [
@@ -53,7 +53,8 @@ angular.module("phoneList").controller("phoneListCtrl", function ($scope, contac
     };
 
     $scope.addContant = function(contact) {
-      contactAPI.addContant().success(function (data) {
+      contact.serial = serialGenerator.generate();
+      contactAPI.addContant(contact).success(function (data) {
         $scope.contactForm.$setPristine();
         //$scope.contactForm.name.$setPristine();
         //$scope.contactForm.phone.$setPristine();

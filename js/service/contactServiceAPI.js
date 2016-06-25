@@ -1,10 +1,11 @@
-angular.module("phoneList").factory("contactAPI", function ($http, config) {
+angular.module("phoneList").factory("contactAPI", function ($http, urlConfig) {
+
     var _getAllContacts = function () {
-        return $http.get(config.getAllContactsUrl);
+        return $http.get(urlConfig.getAllContactsUrl);
     };
 
     var _addContact = function (contact) {
-        return $http.post(config.addContantUrl, contact);
+        return $http.post(urlConfig.addContantUrl, contact);
     };
 
     return {

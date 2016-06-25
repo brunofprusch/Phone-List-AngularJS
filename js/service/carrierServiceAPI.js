@@ -1,5 +1,5 @@
-angular.module("phoneList").service("carrierAPI", function ($http, config) {
+angular.module("phoneList").service("carrierAPI", function ($http, urlConfig) {
     this.getAllCarriers = function () {
-        return $http.get(config.getAllCarriersUrl);
+        return $http.get(urlConfig.getAllCarriersUrl);
     };
 });

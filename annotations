@@ -311,4 +311,22 @@
                    É como se fosse um contrutor de uma classe, ou seja,
                    damos new e passamos os parâmetros, isto é "Constructor Function".
 
+              # value
+
+                  Come se fosse um arquivo de propriedades, é possível configurar
+                  propriedades como por exemplo URL's para que outros serviços utilizem.
+
               # Provider
+
+                  O serviço que dá origem a todos os outros, é um serviço mais
+                  complexo que os outros, porém nos dá a habilidade de configuralo.
+
+              # config
+
+                  Semelhante ao value, porém é possivel injetar configuração
+                  em serviços do tipo provider.
+
+              # constant
+
+                  Muito semelhante ao serviço value, porém a diferença é que
+                  ele pode ser injetado no serviço provider.
