@@ -330,3 +330,17 @@
 
                   Muito semelhante ao serviço value, porém a diferença é que
                   ele pode ser injetado no serviço provider.
+
+
+
+####### Criando Filtros
+
+        Filtros transformam o resultado de uma expressão, realizando operações
+        como a formatação de data, conversão de moeda e a ordenação de Array.
+
+        # Filter
+
+            Seria basicamente um "serviço" porém do tipo filter.
+
+            Retorna uma função que recebe um input. Ou seja, recebe um 
+            parâmetros, faz alguma coisa com aquele parâmetros e retorno o valor.
