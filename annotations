@@ -342,5 +342,61 @@
 
             Seria basicamente um "serviço" porém do tipo filter.
 
-            Retorna uma função que recebe um input. Ou seja, recebe um 
+            Retorna uma função que recebe um input. Ou seja, recebe um
             parâmetros, faz alguma coisa com aquele parâmetros e retorno o valor.
+
+
+
+####### Criando Diretivas (Parte 1)
+
+
+      A criação de uma diretiva é igual como criar um serviço,
+      precisamos localizar nosso módulo, e então utilizar '.directive',
+      passando um nome e a função, esta função retorno o objeto chamado
+      'Directive Definition Object'.
+
+      Este objeto é composto por propriedades e estas propriedades definem o
+      comportamento de cada diretiva que criarmos.
+
+      # Parte 1:
+          - template
+          - templateUrl
+          - replace
+          - restrict
+          - scope
+          - transclude
+
+
+      Importante que como o js é case sentive e o html é case insentive,
+      no caso de criarmos uma diretiva chamada 'uiAlert', podemos utilizar
+      no html, 'uialert', uiAlert', 'UIALERT' ou 'ui-alert'.
+      As diretivas do proprias diretivas do angular são declaradas sem o '-',
+      como por exemplo, 'ng-repeat', que na verdade é 'ngRepeat'.
+
+
+      # template e templateUrl
+
+            Especifica o template ou a url do template a ser incluído
+            dentro do elemento que estiver utilizando a diretiva.
+
+      # replace
+
+            Substitui toda a tag com a diretiva pelo template criado na diretiva.
+            Não é muito popular.
+
+      # restrict
+
+            Restringe o modo de utilização da diretiva ao atributo, elemento,
+            classe e comentário, ou ainda uma combinação deles.
+            Caso não seja definido, o padrão é que a diretiva seja atribuida pelo atributo.
+
+                # Tipo de restrição
+
+                      A - Diretiva restrita ao atributo do elemento.
+                      E - Diretiva restrita ao elemento.
+                      C - Diretiva restrita a classe do elemento.
+                      M - Diretiva restrita ai comentário do elemento.
+
+      # scope
+
+          

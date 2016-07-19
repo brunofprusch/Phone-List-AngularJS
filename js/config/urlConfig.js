@@ -1,7 +1,7 @@
 angular.module("phoneList").value("urlConfig", {
 
-  getAllContactsUrl: "http://localhost:8080/contact/all",
-  addContantUrl: "http://localhost:8080/contact/add",
-  getAllCarriersUrl: "http://localhost:8080/carrier/all"
+  getAllContactsUrl: "https://fathomless-gorge-24734.herokuapp.com/contact/all",
+  addContantUrl: "https://fathomless-gorge-24734.herokuapp.com/contact/add",
+  getAllCarriersUrl: "https://fathomless-gorge-24734.herokuapp.com/carrier/all"
 
 });

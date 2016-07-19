@@ -5,6 +5,7 @@
 
       <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
       <link rel="stylesheet" type="text/css" href="css/app.css">
+      <link rel="stylesheet" type="text/css" href="css/ui.css">
 
       <script src="lib/angular/angular.js"></script>
       <script src="lib/angular/i18n/angular-locale_pt-br.js"></script>
@@ -17,11 +18,14 @@
       <script src="js/config/serialGeneratorConfig.js"></script>
       <script src="js/filter/nameFilter.js"></script>
       <script src="js/filter/ellipsiFilter.js"></script>
+      <script src="js/directive/uiAlertDirective.js"></script>
 
   </head>
   <body ng-controller="phoneListCtrl">
       <div class="jumbotron">
           <h3>{{app}}</h3>
+
+          <div ui-alert></div>
 
           <input class="form-control" type="text" ng-model="searchCriterion" placeholder="O que você está buscando"/>
 

@@ -43,12 +43,16 @@ angular.module("phoneList").controller("phoneListCtrl", function ($scope, contac
     var loadContacts = function () {
       contactAPI.getAllContacts().success(function (data) {
           $scope.contacts = data;
+      }).error(function (data, status) {
+          $scope.errorLoadContacts = "Impossible to load all contacts!"
       });
     };
 
     var loadCarriers = function () {
       carrierAPI.getAllCarriers().success(function (data) {
           $scope.carriers = data;
+      }).error(function (data, status) {
+          $scope.errorLoadCarriers = "Impossible to load all carriers!"
       });
     };
 
