@@ -399,4 +399,26 @@
 
       # scope
 
-          
+            Serve para isolar o scope da diretiva, ou seja, cria um scope proprio para a diretiva,
+            sendo assim a diretiva não tem acesso valores do scope do controller.
+
+                # @
+
+                  Server para fazer o bind entre o valor colocado no atributo, para o valor que
+                  será passado para a propriedade do scope.
+
+                # =
+
+                  Faz um bind entre o valor da propriedade do scope do controller para
+                  o scope da diretiva.
+
+
+    # transclude
+
+          Serve para conseguirmos incluir a mensagem por exemplo entre as tag do elemetno,
+          ou seja, não precisamos passar a mensagem no valor de uma atributo.
+          Basta incluir na diretiva, transclude: true.
+
+          Apesar de ser um novo scope, ele não é isolado, herdando todas as propriedades do scope externo.
+
+          Necessário incluir ng-transclude na tag onde queremos que a mensagem apareça dentro.

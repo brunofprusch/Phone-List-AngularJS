@@ -44,7 +44,7 @@ angular.module("phoneList").controller("phoneListCtrl", function ($scope, contac
       contactAPI.getAllContacts().success(function (data) {
           $scope.contacts = data;
       }).error(function (data, status) {
-          $scope.errorLoadContacts = "Impossible to load all contacts!"
+          $scope.error = "Impossible to load all contacts!"
       });
     };
 
@@ -52,7 +52,7 @@ angular.module("phoneList").controller("phoneListCtrl", function ($scope, contac
       carrierAPI.getAllCarriers().success(function (data) {
           $scope.carriers = data;
       }).error(function (data, status) {
-          $scope.errorLoadCarriers = "Impossible to load all carriers!"
+          $scope.error = "Impossible to load all carriers!"
       });
     };
 
