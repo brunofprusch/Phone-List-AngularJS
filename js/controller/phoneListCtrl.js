@@ -43,16 +43,20 @@ angular.module("phoneList").controller("phoneListCtrl", function ($scope, contac
     var loadContacts = function () {
       contactAPI.getAllContacts().success(function (data) {
           $scope.contacts = data;
+          verifyIfShowAlertError();
       }).error(function (data, status) {
-          $scope.error = "Impossible to load all contacts!"
+          $scope.error = "Impossible to load all contacts!";
+          verifyIfShowAlertError();
       });
     };
 
     var loadCarriers = function () {
       carrierAPI.getAllCarriers().success(function (data) {
           $scope.carriers = data;
+          verifyIfShowAlertError();
       }).error(function (data, status) {
-          $scope.error = "Impossible to load all carriers!"
+          $scope.error = "Impossible to load all carriers!";
+          verifyIfShowAlertError();
       });
     };
 
@@ -66,6 +70,14 @@ angular.module("phoneList").controller("phoneListCtrl", function ($scope, contac
         loadContacts();
       });
     };
+
+    var verifyIfShowAlertError = function() {
+      if ($scope.error != undefined && $scope.error != "") {
+        $scope.hideAlertError = false;
+      } else {
+        $scope.hideAlertError = true;
+      }
+    }
 
     loadContacts();
     loadCarriers();

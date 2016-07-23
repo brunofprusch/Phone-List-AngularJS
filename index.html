@@ -19,13 +19,14 @@
       <script src="js/filter/nameFilter.js"></script>
       <script src="js/filter/ellipsiFilter.js"></script>
       <script src="js/directive/uiAlertDirective.js"></script>
+      <script src="js/directive/uiDateDirective.js"></script>
 
   </head>
   <body ng-controller="phoneListCtrl">
       <div class="jumbotron">
           <h3>{{app}}</h3>
 
-          <ui-alert title="Ops, there was a problem!!">
+          <ui-alert title="Ops, there was a problem!!" ng-hide="hideAlertError">
             {{error}}
           </ui-alert>
 
@@ -61,6 +62,8 @@
               <input class="form-control" type="text" ng-model="contact.phone" placeholder="Phone" name="phone" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/"/>
               <div ng-show="contactForm.phone.$error.required && contactForm.phone.$dirty" class="alert alert-danger">The phone is required!</div>
               <div ng-show="contactForm.phone.$error.pattern" class="alert alert-danger">The phone need have pattern #####-####!</div>
+
+              <input class="form-control" type="text" ng-model="contact.date" placeholder="Date" name="Date" ng-required="true"/>
 
               <select class="form-control" ng-model="contact.carrier" ng-options="carrier.name + ' (' + (carrier.price | currency) + ')' group by carrier.category for carrier in carriers  | orderBy: 'name'">
                   <option value="">Select a carrier</option>
