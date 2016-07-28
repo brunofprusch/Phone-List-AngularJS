@@ -422,3 +422,23 @@
           Apesar de ser um novo scope, ele não é isolado, herdando todas as propriedades do scope externo.
 
           Necessário incluir ng-transclude na tag onde queremos que a mensagem apareça dentro.
+
+
+####### Criando Diretivas (Parte 2)
+
+        Parte 2:
+
+            Vamos trabalhar com diretivas de mascara.
+
+
+        # link
+
+            Executada depois do template ter sido compilado,
+            podemos utilizá-la para iteragir com o DOM, tratando
+            eventos ou memso para definir o comportamento assiciado
+            com a lógica da diretiva.
+
+        # require
+
+            Estabelece um vínculo com outra diretiva interagindo por meio do controller,
+            que é um dos parâmetros da função link.
