@@ -426,6 +426,8 @@
 
 ####### Criando Diretivas (Parte 2)
 
+        * Estudar a API de ngModel, tem bastante funções úteis.
+
         Parte 2:
 
             Vamos trabalhar com diretivas de mascara.
