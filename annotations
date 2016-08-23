@@ -437,10 +437,13 @@
 
             Executada depois do template ter sido compilado,
             podemos utilizá-la para iteragir com o DOM, tratando
-            eventos ou memso para definir o comportamento assiciado
+            eventos ou memso para definir o comportamento associado
             com a lógica da diretiva.
+            Ou seja, podemos utilizar para mostrar ou ocultar alguma coisa.
 
         # require
 
             Estabelece um vínculo com outra diretiva interagindo por meio do controller,
             que é um dos parâmetros da função link.
+            É possível indicar que o vinculo será realizado com uma diretiva pai,
+            nesta caso é necessário utilizar "^" antes do nome da diretiva.

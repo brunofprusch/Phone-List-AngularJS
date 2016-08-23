@@ -20,6 +20,7 @@
       <script src="js/filter/ellipsiFilter.js"></script>
       <script src="js/directive/uiAlertDirective.js"></script>
       <script src="js/directive/uiDateDirective.js"></script>
+      <script src="js/directive/uiAccordionDirective.js"></script>
 
   </head>
   <body ng-controller="phoneListCtrl">
@@ -29,6 +30,53 @@
           <ui-alert title="Ops, there was a problem!!" ng-hide="hideAlertError">
             {{error}}
           </ui-alert>
+
+          <ui-accordions>
+            <ui-accordion title="Accordion 1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est laborum.
+            </ui-accordion>
+
+            <ui-accordion title="Accordion 2">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est laborum.
+            </ui-accordion>
+
+            <ui-accordion title="Accordion 3">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est laborum.
+            </ui-accordion>
+
+            <ui-accordion title="Accordion 4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est laborum.
+            </ui-accordion>
+
+            <ui-accordion title="Accordion 5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est laborum.
+            </ui-accordion>
+          </ui-accordions>
 
           <input class="form-control" type="text" ng-model="searchCriterion" placeholder="O que você está buscando"/>
 
@@ -62,7 +110,7 @@
               <input class="form-control" type="text" ng-model="contact.phone" placeholder="Phone" name="phone" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/"/>
               <div ng-show="contactForm.phone.$error.required && contactForm.phone.$dirty" class="alert alert-danger">The phone is required!</div>
               <div ng-show="contactForm.phone.$error.pattern" class="alert alert-danger">The phone need have pattern #####-####!</div>
-              
+
               <input class="form-control" type="text" ng-model="contact.date" placeholder="Date" name="Date" ng-required="true" ui-date/>
 
               <select class="form-control" ng-model="contact.carrier" ng-options="carrier.name + ' (' + (carrier.price | currency) + ')' group by carrier.category for carrier in carriers  | orderBy: 'name'">
