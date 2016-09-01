@@ -447,3 +447,16 @@
             que é um dos parâmetros da função link.
             É possível indicar que o vinculo será realizado com uma diretiva pai,
             nesta caso é necessário utilizar "^" antes do nome da diretiva.
+
+
+
+####### Modularizando o Projeto
+
+        # O que é um modulo:
+
+              Um módulo é uma coleção de componentes, ou seja, um conjunto de controllers,
+              directives, filters, services, entre outros tipos de componente utilizandos pela aplicação.
+
+        # Beneficios
+
+             Um dos grandes beneficios é o isolamento, pois permite isolarmos completamente uma determinada funcionalidade.
