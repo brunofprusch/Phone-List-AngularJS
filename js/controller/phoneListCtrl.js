@@ -1,4 +1,4 @@
-angular.module("phoneList").controller("phoneListCtrl", function ($scope, contactAPI, carrierAPI, serialGenerator){
+angular.module("phoneList").controller("phoneListCtrl", function ($scope, contactAPI, serialGenerator){
     $scope.app = "Phone List";
     /*
     $scope.contacts = [
@@ -18,7 +18,6 @@ angular.module("phoneList").controller("phoneListCtrl", function ($scope, contac
     */
 
     $scope.contacts = [];
-    $scope.carriers = [];
 
     $scope.isContactSelected = function(contacts) {
       return contacts.some(function (contact) {
@@ -50,27 +49,6 @@ angular.module("phoneList").controller("phoneListCtrl", function ($scope, contac
       });
     };
 
-    var loadCarriers = function () {
-      carrierAPI.getAllCarriers().success(function (data) {
-          $scope.carriers = data;
-          verifyIfShowAlertError();
-      }).error(function (data, status) {
-          $scope.error = "Impossible to load all carriers!";
-          verifyIfShowAlertError();
-      });
-    };
-
-    $scope.addContant = function(contact) {
-      contact.serial = serialGenerator.generate();
-      contactAPI.addContant(contact).success(function (data) {
-        $scope.contactForm.$setPristine();
-        //$scope.contactForm.name.$setPristine();
-        //$scope.contactForm.phone.$setPristine();
-        delete $scope.contact;
-        loadContacts();
-      });
-    };
-
     var verifyIfShowAlertError = function() {
       if ($scope.error != undefined && $scope.error != "") {
         $scope.hideAlertError = false;
@@ -80,5 +58,5 @@ angular.module("phoneList").controller("phoneListCtrl", function ($scope, contac
     }
 
     loadContacts();
-    loadCarriers();
+
 })

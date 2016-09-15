@@ -460,3 +460,13 @@
         # Beneficios
 
              Um dos grandes beneficios é o isolamento, pois permite isolarmos completamente uma determinada funcionalidade.
+
+
+
+####### Single-Page-Application
+
+        # ngRoute:
+
+        # $routeProvider:
+
+              Serve para configurar rotas a partir de uma configuração.

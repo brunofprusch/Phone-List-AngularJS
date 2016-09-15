@@ -1,1 +1,1 @@
-angular.module("phoneList", ["serialGenerator", "ui"]); //Cria o módulo
+angular.module("phoneList", ["serialGenerator", "ui", "ngRoute"]); //Cria o módulo

@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <form name="contactForm">
+      <input class="form-control" type="text" ng-model="contact.name" placeholder="Name" name="name" ng-required="true" ng-minlength="2"/>
+      <div ng-show="contactForm.name.$error.required && contactForm.name.$dirty" class="alert alert-danger">The name is required!</div>
+      <div ng-show="contactForm.name.$error.minlength" class="alert alert-danger">The name need have 2 caracters at least!</div>
+
+      <input class="form-control" type="text" ng-model="contact.phone" placeholder="Phone" name="phone" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/"/>
+      <div ng-show="contactForm.phone.$error.required && contactForm.phone.$dirty" class="alert alert-danger">The phone is required!</div>
+      <div ng-show="contactForm.phone.$error.pattern" class="alert alert-danger">The phone need have pattern #####-####!</div>
+
+      <input class="form-control" type="text" ng-model="contact.date" placeholder="Date" name="Date" ng-required="true" ui-date/>
+
+      <select class="form-control" ng-model="contact.carrier" ng-options="carrier.name + ' (' + (carrier.price | currency) + ')' group by carrier.category for carrier in carriers  | orderBy: 'name'">
+          <option value="">Select a carrier</option>
+      </select>
+  </form>
+
+  <button class="btn btn-primary btn-block" ng-click="addContant(contact)" ng-disabled="contactForm.$invalid">Add Contact</button>
+<div class="jumbotron">
