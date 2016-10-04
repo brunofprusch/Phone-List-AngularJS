@@ -26,11 +26,15 @@ angular.module("phoneList").controller("phoneListCtrl", function ($scope, contac
     };
 
     $scope.deleteContacts = function(contacts) {
-        $scope.contacts = contacts.filter(function (contact) {
-            if (!contact.selected) {
-              return contact;
+        contacts.filter(function (contact) {
+            if (contact.selected) {
+                contactAPI.deleteContact(contact.serial).success(function () {
+                  $scope.contacts = [];
+                  loadContacts();
+                });
             }
         });
+
     };
 
     $scope.orderByColumn = "name";

@@ -7,4 +7,6 @@ angular.module("phoneList").config(function ($routeProvider) {
         templateUrl: "view/newContact.html",
         controller: "newContactCtrl"
     });
+
+    $routeProvider.otherwise({redirectTo: "/contacts"});
 });

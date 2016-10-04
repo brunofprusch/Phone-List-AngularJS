@@ -8,8 +8,13 @@ angular.module("phoneList").factory("contactAPI", function ($http, urlConfig) {
         return $http.post(urlConfig.addContantUrl, contact);
     };
 
+    var _deleteContact = function (serial) {
+        return $http.delete(urlConfig.deleteContact + serial);
+    };
+
     return {
       getAllContacts: _getAllContacts,
-      addContant: _addContact
+      addContant: _addContact,
+      deleteContact: _deleteContact
     };
 });
