@@ -12,9 +12,14 @@ angular.module("phoneList").factory("contactAPI", function ($http, urlConfig) {
         return $http.delete(urlConfig.deleteContact + serial);
     };
 
+    var _getContact = function (serial) {
+        return $http.get(urlConfig.getContact + serial);
+    };
+
     return {
       getAllContacts: _getAllContacts,
       addContant: _addContact,
-      deleteContact: _deleteContact
+      deleteContact: _deleteContact,
+      getContact: _getContact
     };
 });

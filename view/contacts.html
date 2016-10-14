@@ -49,7 +49,7 @@
       <tr ng-class="{selected: contact.selected, bold: contact.selected}" ng-repeat="contact in contacts | filter:searchCriterion | orderBy: orderByColumn:directionOfSorting">
           <td><input type="checkbox" ng-model="contact.selected"></td>
           <td>{{contact.serial}}</td>
-          <td>{{contact.name | nameFilter | ellipsiFilter}}</td>
+          <td><a href=#/viewContact/{{contact.serial}}>{{contact.name | nameFilter}}</a><td>
           <td>{{contact.date | date: 'dd/MM/yyyy'}}</td>
           <td>{{contact.phone}}</td>
           <td>{{contact.carrier.name}}</td>
