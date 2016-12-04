@@ -14,7 +14,7 @@ angular.module("phoneList").controller("newContactCtrl", function ($scope, conta
   };
 
   $scope.addContant = function(contact) {
-    contact.serial = serialGenerator.generate();
+    //contact.serial = serialGenerator.generate();
     contactAPI.addContant(contact).success(function (data) {
       $scope.contactForm.$setPristine();
       //$scope.contactForm.name.$setPristine();

@@ -1,6 +1,6 @@
 angular.module("phoneList").config(function ($routeProvider) {
     $routeProvider.when("/contacts", {
-        templateUrl: "view/contacts.html",
+        templateUrl: "/view/contacts.html",
         controller: "phoneListCtrl"
     });
 
@@ -9,9 +9,13 @@ angular.module("phoneList").config(function ($routeProvider) {
         controller: "newContactCtrl"
     });
 
-    $routeProvider.when("/viewContact/:serial", {
+    $routeProvider.when("/viewContact/:id", {
         templateUrl: "view/viewContact.html",
         controller: "viewContactCtrl"
+    });
+
+    $routeProvider.when("/error", {
+        templateUrl: "view/error.html"
     });
 
     $routeProvider.otherwise({redirectTo: "/contacts"});

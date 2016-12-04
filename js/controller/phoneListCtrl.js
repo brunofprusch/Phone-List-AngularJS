@@ -1,4 +1,4 @@
-angular.module("phoneList").controller("phoneListCtrl", function ($scope, contactAPI, serialGenerator){
+angular.module("phoneList").controller("phoneListCtrl", function ($scope, $rootScope, contactAPI, serialGenerator){
     $scope.app = "Phone List";
     /*
     $scope.contacts = [
@@ -44,7 +44,8 @@ angular.module("phoneList").controller("phoneListCtrl", function ($scope, contac
     };
 
     var loadContacts = function () {
-      contactAPI.getAllContacts().success(function (data) {
+      contactAPI.getAllContacts().success(function (data, status, headers, config) {
+          $rootScope.custumerHeader = headers('New-Header');
           $scope.contacts = data;
           verifyIfShowAlertError();
       }).error(function (data, status) {

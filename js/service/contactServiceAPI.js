@@ -1,7 +1,7 @@
 angular.module("phoneList").factory("contactAPI", function ($http, urlConfig) {
 
     var _getAllContacts = function () {
-        return $http.get(urlConfig.getAllContactsUrl);
+          return $http.get(urlConfig.getAllContactsUrl);
     };
 
     var _addContact = function (contact) {
@@ -12,8 +12,8 @@ angular.module("phoneList").factory("contactAPI", function ($http, urlConfig) {
         return $http.delete(urlConfig.deleteContact + serial);
     };
 
-    var _getContact = function (serial) {
-        return $http.get(urlConfig.getContact + serial);
+    var _getContact = function (id) {
+        return $http.get(urlConfig.getContact + id);
     };
 
     return {

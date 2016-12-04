@@ -13,8 +13,8 @@ angular.module("phoneList").controller("viewContactCtrl", function ($scope, cont
     });
   };
 
-  var loadContact = function (serial) {
-    contactAPI.getContact(serial).success(function (data) {
+  var loadContact = function (id) {
+    contactAPI.getContact(id).success(function (data) {
         $scope.contact = data;
         verifyIfShowAlertError();
     }).error(function (data, status) {
@@ -32,6 +32,6 @@ angular.module("phoneList").controller("viewContactCtrl", function ($scope, cont
   }
 
   loadCarriers();
-  loadContact($routeParams.serial);
+  loadContact($routeParams.id);
 
 })
